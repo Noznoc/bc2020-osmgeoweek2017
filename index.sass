@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Hind+Vadodara|PT+Sans)
+
+// fonts
+$header-font: 'PT Sans', sans-serif
+$body-font: 'Hind Vadodara', sans-serif
+
+// colors
+$primary-color: #3689BC
+$accent-color: #F46036
+
+body
+	margin: 0
+	padding: 0
+
+.link
+	text-decoration: none
+	color: $accent-color
+	font-weight: bold
+
+	&:hover
+		text-decoration: underline
+
+#map
+	position: absolute
+	top: 0
+	bottom: 0
+	width: 100%
+
+.map-overlay
+	color: $primary-color
+	position: absolute
+	width: 25%
+	top: 0
+	left: 0
+	padding: 10px
+
+.map-overlay-inner
+	background-color: white
+	border-radius: 3px
+	border: 1px solid $accent-color
+	padding: 10px
+	margin-bottom: 10px
+
+.map-overlay
+	h2
+		font-family: $header-font
+		line-height: 24px
+		display: block
+		margin: 0 0 10px
+
+	h3, p
+		font-family: $body-font
+
+	label
+		color: $accent-color
+
+	input
+		background-color: transparent
+		display: inline-block
+		width: 100%
+		position: relative
+		margin: 0
+		cursor: ew-resize
+
+.mapboxgl-popup-content
+	font-family: $body-font
+	color: $primary-color
+	border-left: 1px solid $accent-color
+	border-right: 1px solid $accent-color
+	text-align: center
+
+	.mapboxgl-popup-close-button
+		color: $accent-color

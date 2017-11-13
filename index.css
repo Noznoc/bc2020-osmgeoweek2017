@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Hind+Vadodara|PT+Sans);
+body {
+  margin: 0;
+  padding: 0; }
+
+.link {
+  text-decoration: none;
+  color: #F46036;
+  font-weight: bold; }
+  .link:hover {
+    text-decoration: underline; }
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%; }
+
+.map-overlay {
+  color: #3689BC;
+  position: absolute;
+  width: 25%;
+  top: 0;
+  left: 0;
+  padding: 10px; }
+
+.map-overlay-inner {
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #F46036;
+  padding: 10px;
+  margin-bottom: 10px; }
+
+.map-overlay h2 {
+  font-family: "PT Sans", sans-serif;
+  line-height: 24px;
+  display: block;
+  margin: 0 0 10px; }
+.map-overlay h3, .map-overlay p {
+  font-family: "Hind Vadodara", sans-serif; }
+.map-overlay label {
+  color: #F46036; }
+.map-overlay input {
+  background-color: transparent;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  cursor: ew-resize; }
+
+.mapboxgl-popup-content {
+  font-family: "Hind Vadodara", sans-serif;
+  color: #3689BC;
+  border-left: 1px solid #F46036;
+  border-right: 1px solid #F46036;
+  text-align: center; }
+  .mapboxgl-popup-content .mapboxgl-popup-close-button {
+    color: #F46036; }
+
+/*# sourceMappingURL=index.css.map */
