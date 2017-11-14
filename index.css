@@ -25,7 +25,7 @@ body {
   height: 100%; }
 
 .map-overlay-inner {
-  background-color: rgba(150, 192, 183, 0.4);
+  background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #96c0b7;
   padding: 15px;
   height: 100%; }

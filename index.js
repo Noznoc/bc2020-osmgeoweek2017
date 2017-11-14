@@ -6,7 +6,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoianVsY29ueiIsImEiOiJjaWo1eHJqd2YwMDFkMXdtM3piZ
 
 var map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/julconz/cj2dfnoic002f2rphyv5cs7k1',
+  style: 'mapbox://styles/julconz/cja00smvy92252sob26ardnrv',
   center: [-97.47, 60.72],
   zoom: 3
 });
@@ -72,7 +72,7 @@ function showInfo(data, tabletop) { // Function to show data from Google Sheet
 			paint: {
 				'circle-color': {
 					property: 'date_revoked',
-					default: '#96C0B7',
+					default: '#252726',
 					type: 'categorical',
 					stops: [
 						['None', '#893838'],
