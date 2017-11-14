@@ -8,7 +8,7 @@ var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/julconz/cj2dfnoic002f2rphyv5cs7k1',
   center: [-97.47, 60.72],
-  zoom: 4
+  zoom: 3
 });
 
 function init() { // Function that initializes TableTop. Tabletop will pull the data from the Google Sheet that stores all the da
@@ -23,14 +23,14 @@ var features = [];
 var years = [];
 
 function showInfo(data, tabletop) { // Function to show data from Google Sheet
-
+	
 	data.forEach(function(data) {
 		if (data.lng) {
 			// store all lat, lng as geojson features
 			var coordinates = [parseFloat(data.lng), parseFloat(data.lat)];
 			var year = parseInt(data.date_set.substr(0, 4));
 			
-			features.push(JSON.parse('{"type":"Feature","properties":{"description":"' + data.community + '","year":' + year + ', "date_set":"' + data.date_set + '"},"geometry":{"type":"Point","coordinates":[' +  coordinates + ']}}'));
+			features.push(JSON.parse('{"type":"Feature","properties":{"description":"' + data.community + '","date_revoked":"' + data.date_revoked + '","population":' + parseInt(data.population_int) + ',"year":' + year + ',"date_set":"' + data.date_set + '"},"geometry":{"type":"Point","coordinates":[' +  coordinates + ']}}'));
 
 			// store all years
 			if (years.indexOf(year) == -1){
@@ -70,7 +70,26 @@ function showInfo(data, tabletop) { // Function to show data from Google Sheet
 			type: 'circle',
 			source: 'markers',
 			paint: {
-				'circle-color': '#3689BC'
+				'circle-color': {
+					property: 'date_revoked',
+					default: '#96C0B7',
+					type: 'categorical',
+					stops: [
+						['None', '#893838'],
+					]
+				}, 
+				'circle-radius': {
+					property: 'population',
+					type: 'interval',
+					stops: [
+						[5, 2],
+						[10, 3],
+						[20, 4],
+						[30, 5],
+						[40, 6],
+						[50, 7]
+					]
+				}
 			}
 		});
 
@@ -85,11 +104,19 @@ function showInfo(data, tabletop) { // Function to show data from Google Sheet
 
 		// hover events for popup
 		map.on('mouseenter', 'water-advisories', function(e) {
+			var text;
 			map.getCanvas().style.cursor = 'pointer';
+
+			// set popup text
+			if (e.features[0].properties.date_revoked !== 'None'){
+				text = '<h2>' + e.features[0].properties.description + '</h2><h3>Date Set: ' + e.features[0].properties.date_set + '<br>Date Revoked: ' + e.features[0].properties.date_revoked + '</h3>';
+			} else {
+				text = '<h2>' + e.features[0].properties.description + '</h2><h3>Date Set: ' + e.features[0].properties.date_set + '</h3>';
+			}
 
 			// populate popup content
 			popup.setLngLat(e.features[0].geometry.coordinates)
-				.setHTML('<h2>' + e.features[0].properties.description + '</h2><h3> Date Set: ' + e.features[0].properties.date_set + '</h3>')
+				.setHTML(text)
 				.addTo(map);
 		});
 
@@ -102,5 +129,7 @@ function showInfo(data, tabletop) { // Function to show data from Google Sheet
         document.getElementById('slider').addEventListener('input', function(e) {
             filterBy(years[e.target.value]);
         });
+
+        console.log(map.getSource('markers'));
 	}
 }

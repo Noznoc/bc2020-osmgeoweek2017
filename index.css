@@ -1,60 +1,82 @@
-@import url(https://fonts.googleapis.com/css?family=Hind+Vadodara|PT+Sans);
+@import url(https://fonts.googleapis.com/css?family=Lato|Open+Sans);
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  height: 100%;
+  width: 100%; }
 
 .link {
   text-decoration: none;
-  color: #F46036;
+  color: #893838;
   font-weight: bold; }
   .link:hover {
     text-decoration: underline; }
+
+.foot {
+  font-size: 12px;
+  margin-left: 100px;
+  margin-bottom: 10px; }
 
 #map {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
+
+.map-overlay-inner {
+  background-color: rgba(150, 192, 183, 0.4);
+  border: 1px solid #96c0b7;
+  padding: 15px;
+  height: 100%; }
 
 .map-overlay {
-  color: #3689BC;
+  color: #252726;
   position: absolute;
   width: 25%;
   top: 0;
   left: 0;
-  padding: 10px; }
-
-.map-overlay-inner {
-  background-color: white;
-  border-radius: 3px;
-  border: 1px solid #F46036;
-  padding: 10px;
-  margin-bottom: 10px; }
-
-.map-overlay h2 {
-  font-family: "PT Sans", sans-serif;
-  line-height: 24px;
-  display: block;
-  margin: 0 0 10px; }
-.map-overlay h3, .map-overlay p {
-  font-family: "Hind Vadodara", sans-serif; }
-.map-overlay label {
-  color: #F46036; }
-.map-overlay input {
-  background-color: transparent;
-  display: inline-block;
-  width: 100%;
-  position: relative;
-  margin: 0;
-  cursor: ew-resize; }
+  height: 100%; }
+  .map-overlay h2 {
+    font-family: "Open Sans", sans-serif;
+    line-height: 24px;
+    display: block;
+    margin: 0 0 10px; }
+  .map-overlay h3, .map-overlay p {
+    font-family: "Lato", sans-serif; }
+  .map-overlay label {
+    color: #893838; }
+  .map-overlay input {
+    background-color: transparent;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    cursor: ew-resize; }
 
 .mapboxgl-popup-content {
-  font-family: "Hind Vadodara", sans-serif;
-  color: #3689BC;
-  border-left: 1px solid #F46036;
-  border-right: 1px solid #F46036;
+  font-family: "Lato", sans-serif;
+  color: #252726;
+  border-left: 1px solid #893838;
+  border-right: 1px solid #893838;
   text-align: center; }
   .mapboxgl-popup-content .mapboxgl-popup-close-button {
-    color: #F46036; }
+    color: #893838; }
+
+.legend {
+  margin-bottom: 0px;
+  padding: 0px;
+  font-family: "Open Sans", sans-serif; }
+  .legend h3 {
+    display: inline-block;
+    margin: 10px 5px; }
+  .legend li {
+    display: inline-block; }
+  .legend span {
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin: 0px 5px;
+    width: 10px; }
 
 /*# sourceMappingURL=index.css.map */
