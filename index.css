@@ -7,28 +7,28 @@ body {
 
 .link {
   text-decoration: none;
-  color: #893838;
+  color: #e04763;
   font-weight: bold; }
   .link:hover {
-    text-decoration: underline; }
+    text-decoration: underline;
+    cursor: pointer; }
 
 .foot {
-  font-size: 12px;
+  font-size: 11px;
   margin-left: 100px;
-  margin-bottom: 10px; }
+  font-weight: bold;
+  text-align: right; }
 
 #map {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%; }
+  width: 100%; }
 
 .map-overlay-inner {
   background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #96c0b7;
-  padding: 15px;
-  height: 100%; }
+  border: 1px solid #e04763;
+  padding: 15px; }
 
 .map-overlay {
   color: #252726;
@@ -45,7 +45,7 @@ body {
   .map-overlay h3, .map-overlay p {
     font-family: "Lato", sans-serif; }
   .map-overlay label {
-    color: #893838; }
+    color: #e04763; }
   .map-overlay input {
     background-color: transparent;
     display: inline-block;
@@ -57,16 +57,17 @@ body {
 .mapboxgl-popup-content {
   font-family: "Lato", sans-serif;
   color: #252726;
-  border-left: 1px solid #893838;
-  border-right: 1px solid #893838;
+  border-left: 1px solid #e04763;
+  border-right: 1px solid #e04763;
   text-align: center; }
   .mapboxgl-popup-content .mapboxgl-popup-close-button {
-    color: #893838; }
+    color: #e04763; }
 
 .legend {
   margin-bottom: 0px;
   padding: 0px;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  text-align: center; }
   .legend h3 {
     display: inline-block;
     margin: 10px 5px; }

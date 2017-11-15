@@ -7,8 +7,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoianVsY29ueiIsImEiOiJjaWo1eHJqd2YwMDFkMXdtM3piZ
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/julconz/cja00smvy92252sob26ardnrv',
-  center: [-97.47, 60.72],
-  zoom: 3
+  center: [-99.93, 54.32],
+  zoom: 4
 });
 
 function init() { // Function that initializes TableTop. Tabletop will pull the data from the Google Sheet that stores all the da
@@ -46,10 +46,16 @@ function showInfo(data, tabletop) { // Function to show data from Google Sheet
 	renderMap(features);
 
 	// filter by time
-	function filterBy(year){
+	function filterBy(year, total){
 		var filters = ['<=', 'year', year];
 		map.setFilter('water-advisories', filters);
-		document.getElementById('year').textContent = "Since " + year;
+		document.getElementById('year').textContent = 'Since ' + year;
+		if (total == 1) {
+			document.getElementById('stats').innerHTML = total + ' advisory in ' + year;
+		} else {
+			document.getElementById('stats').innerHTML = total + ' advisories in ' + year;
+		}
+
 	}
 
 	// render map
@@ -64,6 +70,17 @@ function showInfo(data, tabletop) { // Function to show data from Google Sheet
 			}
 		});
 
+		// make labels on top of new layer
+		var labels,
+			layers = map.getStyle().layers;
+
+	    for (var i = 0; i < layers.length; i++) {
+	        if (layers[i].type === 'symbol') {
+	            labels = layers[i].id;
+	            break;
+	        }
+	    }
+
 		// add water advisory data as a layer
 		map.addLayer({
 			id: 'water-advisories',
@@ -75,26 +92,26 @@ function showInfo(data, tabletop) { // Function to show data from Google Sheet
 					default: '#252726',
 					type: 'categorical',
 					stops: [
-						['None', '#893838'],
+						['None', '#e04763'],
 					]
-				}, 
+				}/*, 
 				'circle-radius': {
 					property: 'population',
 					type: 'interval',
 					stops: [
-						[5, 2],
-						[10, 3],
-						[20, 4],
-						[30, 5],
-						[40, 6],
-						[50, 7]
+						[5, 3],
+						[10, 4],
+						[20, 5],
+						[30, 6],
+						[40, 7],
+						[50, 8]
 					]
-				}
+				}*/
 			}
-		});
+		}, labels);
 
 		// initial filter
-		filterBy(years[0]);
+		filterBy(years[0], 1);
 
 		// create popup
 		var popup = new mapboxgl.Popup({
@@ -127,9 +144,13 @@ function showInfo(data, tabletop) { // Function to show data from Google Sheet
 
 		// when time slider is moved filter the data
         document.getElementById('slider').addEventListener('input', function(e) {
-            filterBy(years[e.target.value]);
+            var total = 0;
+            features.forEach(function(feature) {
+            	if (feature.properties.year == years[e.target.value]){
+            		total +=  1;
+            	}
+            });
+            filterBy(years[e.target.value], total);
         });
-
-        console.log(map.getSource('markers'));
 	}
 }
