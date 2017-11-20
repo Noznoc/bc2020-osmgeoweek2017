@@ -1,13 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Lato|Open+Sans)
+@import url(https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Open+Sans)
 
 // fonts
-$header-font: 'Open Sans', sans-serif
-$body-font: 'Lato', sans-serif
+$header-font: 'Barlow Semi Condensed', sans-serif
+$body-font: 'Open Sans', sans-serif
 
 // colors
-$primary-color: #252726
-$accent-color: #e04763
-$background-color: rgba(255, 255, 255, 0.9)
+$primary-color: rgba(69,69,69,1)
+$accent-color: #CC4140
+$background-color: #F7F3EB
+$line-color: #31339e
 
 body
 	margin: 0
@@ -38,13 +39,31 @@ body
 
 .map-overlay-inner
 	background-color: $background-color
-	border: 1px solid $accent-color
+	border: 1px solid $line-color
+	border-radius: 10px
+	margin: 10px
 	padding: 15px
+
+.buttons
+	margin-top: 10px
+
+	button
+		background-color: $accent-color
+		border: 0px
+		color: $background-color
+		margin: 2px
+		padding: 5px
+		font-family: $body-font
+		font-size: 12px
+
+		&:hover
+			cursor: pointer
+			background-color: $line-color
 
 .map-overlay
 	color: $primary-color
 	position: absolute
-	width: 25%
+	width: 35%
 	top: 0
 	left: 0
 	height: 100%
@@ -54,9 +73,12 @@ body
 		line-height: 24px
 		display: block
 		margin: 0 0 10px
+		font-weight: bold
+		font-size: 30px
 
 	h3, p
 		font-family: $body-font
+		font-size: 14px
 
 	label
 		color: $accent-color
@@ -69,21 +91,10 @@ body
 		margin: 0
 		cursor: ew-resize
 
-.mapboxgl-popup-content
-	font-family: $body-font
-	color: $primary-color
-	border-left: 1px solid $accent-color
-	border-right: 1px solid $accent-color
-	text-align: center
-
-	.mapboxgl-popup-close-button
-		color: $accent-color
-
 .legend
 	margin-bottom: 0px
 	padding: 0px
 	font-family: $header-font
-	text-align: center
 
 	h3
 		display: inline-block

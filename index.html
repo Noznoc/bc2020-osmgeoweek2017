@@ -1,13 +1,11 @@
 <html>	
 	<head>
 		<meta charset='utf-8' />
-	    <title>Canadian Water Advisories</title>
+	    <title>BC2020 Mapathons</title>
 	    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />		
 	    <!-- Mapbox GL JS -->
 	    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
 	    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
-		<!-- Tabletop -->
-		<script type='text/javascript' src='src/tabletop-master/tabletop.js'></script>
 		<!-- Stylesheet -->
 		<link href='index.css' rel='stylesheet' />
 	</head>
@@ -15,24 +13,23 @@
 		<div id='map'></div>
 		<div class='map-overlay top'>
 			<div class='map-overlay-inner'>
-		        <h2>Drinking Water Advisories: First Nations South of 60</h2>
-		        <h3>Since 1995, the Canadian government has documented drinking water advisories for First Nation communities across Canada. Drag the slider to see the number of advisories increasing with time.</h3>
-		        <h3 id='stats'></h3>
-		        <h3><label id='year'></label></h3>
-		        <input id='slider' type='range' min='0' max='19' step='1' value='0' />
-		        <ul class='legend'><h3> Advisory Revoked: </h3>
-		        	<li><span style='background-color: #252726'></span>Yes</li>
-		        	<li><span style='background-color: #e04763'></span>No</li>
-		        </ul>
-		       <!-- <div class='legend'>
-		        	<h3>Population:</h3>
-		        	<p><span style='border: solid 1px black; height: 7px; width: 7px;' class='radius'></span>Unknown</p>
-		        	<p><span style='border: solid 1px black; height: 8px; width: 8px' class='radius'></span>0-100</p>
-		        	<p><span style='border: solid 1px black; height: 9px; width: 9px;' class='radius'></span>101-500</p>
-		        	<p><span style='border: solid 1px black; height: 10x; width: 10px' class='radius'></span>501-1000</p>
-		        	<p><span style='border: solid 1px black; height: 11px; width: 11px' class='radius'></span>1001-5000</p>
-		        </div>-->
-		       	<p class='foot'>(Source data is accessible <a class='link' href='https://www.canada.ca/en/health-canada/topics/health-environment/water-quality-health/drinking-water/advisories-first-nations-south-60.html' target='_blank'>here</a>.)</p>
+		        <h2>Building Canada 2020 OSMGeoWeek Mapathons</h2>
+		        <h3>From November 10 - 18, 2017, Canadian colleges and universities participated in Building Canada 2020 (BC2020) mapathons for OSMGeoWeek! BC2020 is a community-led project to map all building footprints by 2020 on <a href='https://www.openstreetmap.org' target='_blank' class='link'>OpenStreetMap (OSM)</a>. Click <a href='https://wiki.openstreetmap.org/wiki/WikiProject_Canada/Building_Canada_2020' target='_blank' class='link'>here</a> to learn more about the project. The mapathons educated students how to map buildings with OSM tools. Participants armchaired mapped Canadian regions that are not represented in OSM and do not have a open building footprint dataset that can be imported. You can read more about the BC2020 mapathons <a href='https://blog.mapbox.com/osmgeoweek-mapathons-support-building-canada-2020-eb0ca4edf8fe' target='_blank' class='link'>here</a>.</h3> 
+		        <div class='buttons'>
+		        	<h3> To see the contributions, click on one of the buttons to zoom into the mapped region and then move the time slider: </h3>
+			        <button onclick='flyTo([-108.2980, 52.7794])'>Carelton University</button>
+			        <button onclick='flyTo([-122.1402, 52.1355])'>McGill University</button>
+			        <button onclick='flyTo([-97.1518, 49.8918])'>Red River College</button>			        
+			        <button onclick='flyTo([-79.0714, 44.1487])'>Ryerson University</button>
+			        <button onclick='flyTo([-117.7050, 49.1006])'>Selkirk College</button>
+			        <button onclick='flyTo([-132.1827, 54.0359])'>University of British Columbia</button>
+			        <button onclick='flyTo([-114.0652, 51.0483])'>University of Calgary</button>
+			        <button onclick='flyTo([-80.9886, 43.3755])'>University of Waterloo</button>
+			        <button onclick='flyTo([-97.1518, 49.8918])'>University of Winnipeg</button>
+			    </div>
+			    <h3><label id='day'></label></h3>
+		        <input id='slider' type='range' min='0' max='10' step='1' value='0' />
+			    <div id='stats'></div>
 		    </div>
 		</div>
 		<script type='text/javascript' src='index.js'></script>	

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato|Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Open+Sans);
 body {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@ body {
 
 .link {
   text-decoration: none;
-  color: #e04763;
+  color: #CC4140;
   font-weight: bold; }
   .link:hover {
     text-decoration: underline;
@@ -26,26 +26,45 @@ body {
   width: 100%; }
 
 .map-overlay-inner {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #e04763;
+  background-color: #F7F3EB;
+  border: 1px solid #31339e;
+  border-radius: 10px;
+  margin: 10px;
   padding: 15px; }
 
+.buttons {
+  margin-top: 10px; }
+  .buttons button {
+    background-color: #CC4140;
+    border: 0px;
+    color: #F7F3EB;
+    margin: 2px;
+    padding: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px; }
+    .buttons button:hover {
+      cursor: pointer;
+      background-color: #31339e; }
+
 .map-overlay {
-  color: #252726;
+  color: #454545;
   position: absolute;
-  width: 25%;
+  width: 35%;
   top: 0;
   left: 0;
   height: 100%; }
   .map-overlay h2 {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Barlow Semi Condensed", sans-serif;
     line-height: 24px;
     display: block;
-    margin: 0 0 10px; }
+    margin: 0 0 10px;
+    font-weight: bold;
+    font-size: 30px; }
   .map-overlay h3, .map-overlay p {
-    font-family: "Lato", sans-serif; }
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px; }
   .map-overlay label {
-    color: #e04763; }
+    color: #CC4140; }
   .map-overlay input {
     background-color: transparent;
     display: inline-block;
@@ -54,20 +73,10 @@ body {
     margin: 0;
     cursor: ew-resize; }
 
-.mapboxgl-popup-content {
-  font-family: "Lato", sans-serif;
-  color: #252726;
-  border-left: 1px solid #e04763;
-  border-right: 1px solid #e04763;
-  text-align: center; }
-  .mapboxgl-popup-content .mapboxgl-popup-close-button {
-    color: #e04763; }
-
 .legend {
   margin-bottom: 0px;
   padding: 0px;
-  font-family: "Open Sans", sans-serif;
-  text-align: center; }
+  font-family: "Barlow Semi Condensed", sans-serif; }
   .legend h3 {
     display: inline-block;
     margin: 10px 5px; }
