@@ -23,7 +23,7 @@ function flyTo(coordinates, zoom, object){
 
 // filter by time
 function filterBy(day){
-	var layers = ['bc2020-buildings-points', 'bc2020-buildings-polygons'];
+	var layers = ['bc2020-buildings-points', 'bc2020-buildings-polygons', 'bc2020-buildings-lines'];
 	var filters = ['<=', 'timestamp', "201711" + day];
 	layers.forEach(function(layer) {
       map.setFilter(layer, filters);
@@ -40,5 +40,29 @@ map.on('load', function(){
 	// when time slider is moved filter the data
   document.getElementById('slider').addEventListener('input', function(e) {
       filterBy(days[e.target.value]);
+  });
+
+  // create popup
+  var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+
+  // hover events for popup
+  map.on('click', 'bc2020-buildings-polygons', function(e) {
+    var text;
+    map.getCanvas().style.cursor = 'pointer';
+    console.log(e.features[0].properties.id.split("way/")[1])
+    text = '<div class="buttons"><a href="https://www.openstreetmap.org/edit?editor=id&way=' + e.features[0].properties.id.split("way/")[1] + '" target="_blank"><button>Edit in iD</button></a></div>';
+
+    // populate popup content
+    popup.setLngLat(e.lngLat)
+      .setHTML(text)
+      .addTo(map);
+  });
+
+  map.on('move', 'bc2020-buildings-polygons', function(e) {
+    map.getCanvas().style.cursor = '';
+    popup.remove();
   });
 });
