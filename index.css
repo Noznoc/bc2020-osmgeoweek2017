@@ -57,10 +57,10 @@ body {
     display: block;
     margin: 0 0 10px;
     font-weight: bold;
-    font-size: 30px; }
+    font-size: 22px; }
   .map-overlay h3, .map-overlay p {
     font-family: "Open Sans", sans-serif;
-    font-size: 14px; }
+    font-size: 13px; }
   .map-overlay label {
     color: #CC4140; }
   .map-overlay input {
