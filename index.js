@@ -10,11 +10,15 @@ var map = new mapboxgl.Map({
   maxBounds: [-168.39312,40.713956,-50.971241,83.359511]
 });
 
-var days = ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+var days = ["11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
 var universities = [[""]]
 
-function flyTo(coordinates){
-  map.flyTo({center: coordinates, zoom: 14})
+function flyTo(coordinates, zoom, object){
+  map.flyTo({center: coordinates, zoom: zoom})
+  document.getElementById('task-buttons').style.display = 'block';
+  document.getElementById('stats').style.display = 'block';
+  document.getElementById('stats').innerHTML = '<p>' + object.innerHTML + ' stats: ' + '</p>';
+  document.getElementById('task').href = 'http://tasks.osmcanada.ca/project/' + object.value;  
 }
 
 // filter by time

@@ -10,6 +10,10 @@ $accent-color: #CC4140
 $background-color: #F7F3EB
 $line-color: #31339e
 
+#task-buttons, #stats
+	display: none
+	text-align: center
+
 body
 	margin: 0
 	padding: 0
@@ -24,12 +28,6 @@ body
 	&:hover
 		text-decoration: underline
 		cursor: pointer
-
-.foot
-	font-size: 11px
-	margin-left: 100px
-	font-weight: bold
-	text-align: right
 
 #map
 	position: absolute
@@ -54,7 +52,7 @@ body
 		margin: 2px
 		padding: 5px
 		font-family: $body-font
-		font-size: 12px
+		font-size: 11px
 
 		&:hover
 			cursor: pointer

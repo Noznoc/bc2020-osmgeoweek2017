@@ -14,22 +14,26 @@
 		<div class='map-overlay top'>
 			<div class='map-overlay-inner'>
 		        <h2>Building Canada 2020 OSMGeoWeek Mapathons</h2>
-		        <h3>From November 10 - 18, 2017, Canadian colleges and universities participated in Building Canada 2020 (BC2020) mapathons for OSMGeoWeek! BC2020 is a community-led project to map all building footprints by 2020 on <a href='https://www.openstreetmap.org' target='_blank' class='link'>OpenStreetMap (OSM)</a>. Click <a href='https://wiki.openstreetmap.org/wiki/WikiProject_Canada/Building_Canada_2020' target='_blank' class='link'>here</a> to learn more about the project. The mapathons educated students how to map buildings with OSM tools. Participants armchaired mapped Canadian regions that are not represented in OSM and do not have a open building footprint dataset that can be imported. You can read more about the BC2020 mapathons <a href='https://blog.mapbox.com/osmgeoweek-mapathons-support-building-canada-2020-eb0ca4edf8fe' target='_blank' class='link'>here</a>.</h3> 
+		        <h3>From November 11 - 18, 2017, Canadian colleges and universities participated in Building Canada 2020 (BC2020) mapathons for OSMGeoWeek! BC2020 is a community-led project to map all building footprints by 2020 on <a href='https://www.openstreetmap.org' target='_blank' class='link'>OpenStreetMap (OSM)</a>. Click <a href='https://wiki.openstreetmap.org/wiki/WikiProject_Canada/Building_Canada_2020' target='_blank' class='link'>here</a> to learn more about the project. The mapathons educated students how to map buildings with OSM tools. Participants armchaired mapped Canadian regions that are not represented in OSM and do not have a open building footprint dataset that can be imported. You can read more about the BC2020 mapathons <a href='https://blog.mapbox.com/osmgeoweek-mapathons-support-building-canada-2020-eb0ca4edf8fe' target='_blank' class='link'>here</a>.</h3> 
 		        <div class='buttons'>
 		        	<h3> To see the contributions, click on one of the buttons to zoom into the mapped region and then move the time slider: </h3>
-			        <button onclick='flyTo([-108.2980, 52.7794])'>Carelton University</button>
-			        <button onclick='flyTo([-122.1402, 52.1355])'>McGill University</button>
-			        <button onclick='flyTo([-97.1518, 49.8918])'>Red River College</button>			        
-			        <button onclick='flyTo([-79.0714, 44.1487])'>Ryerson University</button>
-			        <button onclick='flyTo([-117.7050, 49.1006])'>Selkirk College</button>
-			        <button onclick='flyTo([-132.1827, 54.0359])'>University of British Columbia</button>
-			        <button onclick='flyTo([-114.0652, 51.0483])'>University of Calgary</button>
-			        <button onclick='flyTo([-80.9886, 43.3755])'>University of Waterloo</button>
-			        <button onclick='flyTo([-97.1518, 49.8918])'>University of Winnipeg</button>
+			        <button value='92' onclick='flyTo([-108.2980, 52.7794], 12, this)'>Carelton University</button>
+			        <button value='91' onclick='flyTo([-122.1402, 52.1355], 12, this)'>McGill University</button>
+			        <button value='' onclick='flyTo([-97.1518, 49.8918], 10, this)'>Red River College</button>
+			        <button value='85' onclick='flyTo([-79.1798, 44.0185], 9, this)'>Ryerson University</button>
+			        <button value='87' onclick='flyTo([-117.7050, 49.1006], 12, this)'>Selkirk College</button>
+			        <button value='88' onclick='flyTo([-132.1827, 54.0359], 12, this)'>University of British Columbia</button>
+			        <button value='83' onclick='flyTo([-114.0652, 51.0483], 10, this)'>University of Calgary</button>
+			        <button value='86' onclick='flyTo([-80.9886, 43.3755], 12, this)'>University of Waterloo</button>
+			        <button value='89' onclick='flyTo([-97.1518, 49.8918], 10, this)'>University of Winnipeg</button>
 			    </div>
 			    <h3><label id='day'></label></h3>
-		        <input id='slider' type='range' min='0' max='10' step='1' value='0' />
+		        <input id='slider' type='range' min='0' max='9' step='1' value='0' />
 			    <div id='stats'></div>
+			    <div id='task-buttons' class='buttons'>
+		    		<a id='task' href='' target='_blank'><button>Contribute or Validate</button></a>
+		    		<a id='task' href='https://wiki.openstreetmap.org/wiki/OSM_Tasking_Manager/Validating_data/Buildings_feedback' target='_blank'><button>Validation Instructions</button></a>
+		    	</div>
 		    </div>
 		</div>
 		<script type='text/javascript' src='index.js'></script>	

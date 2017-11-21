@@ -1,4 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Open+Sans);
+#task-buttons, #stats {
+  display: none;
+  text-align: center; }
+
 body {
   margin: 0;
   padding: 0;
@@ -12,12 +16,6 @@ body {
   .link:hover {
     text-decoration: underline;
     cursor: pointer; }
-
-.foot {
-  font-size: 11px;
-  margin-left: 100px;
-  font-weight: bold;
-  text-align: right; }
 
 #map {
   position: absolute;
@@ -41,7 +39,7 @@ body {
     margin: 2px;
     padding: 5px;
     font-family: "Open Sans", sans-serif;
-    font-size: 12px; }
+    font-size: 11px; }
     .buttons button:hover {
       cursor: pointer;
       background-color: #31339e; }
