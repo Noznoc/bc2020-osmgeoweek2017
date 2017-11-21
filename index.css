@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Open+Sans);
 #task-buttons, #stats {
-  display: none;
-  text-align: center; }
+  display: none; }
+  #task-buttons .buttons, #stats .buttons {
+    text-align: center; }
 
 body {
   margin: 0;
