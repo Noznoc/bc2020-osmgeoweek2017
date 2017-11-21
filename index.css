@@ -61,7 +61,8 @@ body {
     font-size: 22px; }
   .map-overlay h3, .map-overlay p {
     font-family: "Open Sans", sans-serif;
-    font-size: 13px; }
+    font-size: 13px;
+    font-weight: bold; }
   .map-overlay label {
     color: #CC4140; }
   .map-overlay input {
@@ -71,21 +72,5 @@ body {
     position: relative;
     margin: 0;
     cursor: ew-resize; }
-
-.legend {
-  margin-bottom: 0px;
-  padding: 0px;
-  font-family: "Barlow Semi Condensed", sans-serif; }
-  .legend h3 {
-    display: inline-block;
-    margin: 10px 5px; }
-  .legend li {
-    display: inline-block; }
-  .legend span {
-    border-radius: 50%;
-    display: inline-block;
-    height: 10px;
-    margin: 0px 5px;
-    width: 10px; }
 
 /*# sourceMappingURL=index.css.map */
