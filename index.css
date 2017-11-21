@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Open+Sans);
 #task-buttons, #stats {
-  display: none; }
+  display: none;
+  text-align: left; }
   #task-buttons .buttons, #stats .buttons {
     text-align: center; }
 
@@ -59,10 +60,13 @@ body {
     margin: 0 0 10px;
     font-weight: bold;
     font-size: 22px; }
-  .map-overlay h3, .map-overlay p {
+  .map-overlay p {
     font-family: "Open Sans", sans-serif;
-    font-size: 13px;
-    font-weight: bold; }
+    font-size: 13px; }
+  .map-overlay h3 {
+    font-size: 15px;
+    color: #31339e;
+    font-family: "Open Sans", sans-serif; }
   .map-overlay label {
     color: #CC4140; }
   .map-overlay input {

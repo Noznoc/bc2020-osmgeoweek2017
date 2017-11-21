@@ -10,14 +10,13 @@ var map = new mapboxgl.Map({
   maxBounds: [-168.39312,40.713956,-50.971241,83.359511]
 });
 
-var days = ["11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
-var universities = [[""]]
+var days = ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
 
-function flyTo(coordinates, zoom, object){
+function flyTo(coordinates, zoom, object, total, contributors, location){
   map.flyTo({center: coordinates, zoom: zoom})
   document.getElementById('task-buttons').style.display = 'block';
   document.getElementById('stats').style.display = 'block';
-  document.getElementById('stats').innerHTML = '<p>' + object.innerHTML + ' stats: ' + '</p>';
+  document.getElementById('stats').innerHTML = '<h3>Between Nov 10-20, ' + total + ' buildings were mapped by ' + contributors + ' contributors in ' + location + '.</h3>';
   document.getElementById('task').href = 'http://tasks.osmcanada.ca/project/' + object.value;  
 }
 
