@@ -5,7 +5,7 @@ var map = new mapboxgl.Map({
   style: 'mapbox://styles/julconz/cj725p6pj1c272spmrrgseoly',
   center: [-99.93, 54.32],
   zoom: 4,
-  maxZoom: 16,
+  maxZoom: 22,
   minZoom: 3,
   maxBounds: [-168.39312,40.713956,-50.971241,83.359511]
 });
