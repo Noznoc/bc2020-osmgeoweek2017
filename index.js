@@ -7,7 +7,8 @@ var map = new mapboxgl.Map({
   zoom: 4,
   maxZoom: 22,
   minZoom: 3,
-  maxBounds: [-168.39312,40.713956,-50.971241,83.359511]
+  maxBounds: [-168.39312,40.713956,-50.971241,83.359511],
+  logoPosition: 'bottom-right'
 });
 
 var days = ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];

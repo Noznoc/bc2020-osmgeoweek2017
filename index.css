@@ -36,7 +36,7 @@ body {
   margin-top: 10px; }
   .buttons button {
     background-color: #CC4140;
-    border: 0px;
+    border: 1px solid #31339e;
     color: #F7F3EB;
     margin: 2px;
     padding: 5px;
@@ -44,7 +44,8 @@ body {
     font-size: 11px; }
     .buttons button:hover {
       cursor: pointer;
-      background-color: #31339e; }
+      background-color: #31339e;
+      border: 1px solid #CC4140; }
 
 .map-overlay {
   color: #454545;
@@ -70,11 +71,47 @@ body {
   .map-overlay label {
     color: #CC4140; }
   .map-overlay input {
-    background-color: transparent;
     display: inline-block;
     width: 100%;
     position: relative;
     margin: 0;
-    cursor: ew-resize; }
+    cursor: ew-resize;
+    background: transparent; }
+  .map-overlay input[type=range] {
+    -webkit-appearance: none; }
+  .map-overlay input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; }
+  .map-overlay input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent; }
+  .map-overlay input[type=range] {
+    border-radius: 15px;
+    height: 10px;
+    border: 1px solid #31339e; }
+  .map-overlay input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #31339e;
+    height: 25px;
+    width: 16px;
+    border-radius: 15px;
+    background: #CC4140;
+    cursor: pointer; }
+  .map-overlay input[type=range]::-moz-range-thumb {
+    border: 1px solid #31339e;
+    height: 25px;
+    width: 16px;
+    border-radius: 15px;
+    background: #CC4140;
+    cursor: pointer; }
+  .map-overlay input[type=range]::-ms-thumb {
+    border: 1px solid #31339e;
+    height: 25px;
+    width: 16px;
+    border-radius: 15px;
+    background: #CC4140;
+    cursor: pointer; }
 
 /*# sourceMappingURL=index.css.map */
