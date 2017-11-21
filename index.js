@@ -8,6 +8,7 @@ var map = new mapboxgl.Map({
   maxZoom: 22,
   minZoom: 3,
   maxBounds: [-168.39312,40.713956,-50.971241,83.359511],
+  hash: true,
   logoPosition: 'bottom-right'
 });
 
